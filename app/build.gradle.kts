@@ -3,6 +3,8 @@ import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.compose.compiler)
+    alias(libs.plugins.kotlin.serialization)
 }
 
 android {
@@ -57,6 +59,7 @@ dependencies {
     implementation(libs.androidx.activity.compose)
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.ui)
+    implementation(libs.androidx.ui.text)
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
@@ -67,4 +70,10 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    implementation(libs.okhttp)
+    implementation(libs.retrofit)
+    implementation(libs.retrofit.converter.kotlinx.serialization)
+    implementation(libs.kotlin.serialization)
+    implementation(libs.coil.compose)
 }
